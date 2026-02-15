@@ -26,17 +26,6 @@ class InstagramPage extends ConsumerWidget {
                 padding: const EdgeInsets.fromLTRB(20, 24, 20, 8),
                 child: Column(
                   children: <Widget>[
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('🎀'),
-                        SizedBox(width: 8),
-                        Chip(label: Text('DECOCOM TOOLKIT')),
-                        SizedBox(width: 8),
-                        Text('🎀'),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
                     Text(
                       'Instagram',
                       style: Theme.of(context).textTheme.headlineLarge
