@@ -217,6 +217,29 @@ https://decocom.onelink.me/IkPp/gift
 
 const List<DmTemplate> commonTemplates = <DmTemplate>[
   DmTemplate(
+    id: 'common-order-reply',
+    category: '返信テンプレ',
+    title: '注文報告への返信',
+    icon: '🛒',
+    text: '''ご注文ありがとうございます😊 確認させていただきます✨ 到着まで少々お待ちください🎀 またご不明点等ございましたらお気軽にお問い合わせください🙇‍♀️''',
+  ),
+  DmTemplate(
+    id: 'common-arrival-reply',
+    category: '返信テンプレ',
+    title: '到着報告への返信',
+    icon: '📦',
+    text: '''ご連絡ありがとうございます😊 無事届いたようで安心しました✨
+ご投稿楽しみにしております🎀 また、ご不明点等ございましたら、お気軽にお問い合わせください🙇‍♀️''',
+  ),
+  DmTemplate(
+    id: 'common-post-reply',
+    category: '返信テンプレ',
+    title: '投稿報告への返信',
+    icon: '🥹',
+    text: '''素敵なご投稿ありがとうございます😭✨
+推しへの愛がすごく伝わってきて、見ていてとっても幸せな気持ちになりました🥹💕また是非お願いします🎀''',
+  ),
+  DmTemplate(
     id: 'common-decline',
     category: '返信テンプレ',
     title: 'お断りへの返信',
