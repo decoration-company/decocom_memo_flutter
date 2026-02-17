@@ -22,23 +22,6 @@ class InstagramPage extends ConsumerWidget {
         child: CustomScrollView(
           slivers: <Widget>[
             SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 24, 20, 8),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      'Instagram',
-                      style: Theme.of(context).textTheme.headlineLarge
-                          ?.copyWith(
-                            color: const Color(0xFFE84A7F),
-                            fontWeight: FontWeight.w700,
-                          ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
               child: AccountTabs(
                 activeAccount: ui.activeAccount,
                 onTap: (InstagramAccount account) => ref
@@ -76,18 +59,50 @@ class InstagramPage extends ConsumerWidget {
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 sliver: SliverToBoxAdapter(
-                  child: StoryLinkCard(
-                    title: '${ui.activeAccount.label} ストーリー用リンク',
-                    link: storyLinks[ui.activeAccount] ?? '',
-                    isCopied: ui.copiedId == 'story-${ui.activeAccount.name}',
-                    onCopy: () => _copyAndNotify(
-                      context: context,
-                      ref: ref,
-                      copiedId: 'story-${ui.activeAccount.name}',
-                      sourceText: storyLinks[ui.activeAccount] ?? '',
-                      deadline: deadline,
-                    ),
-                  ),
+                  child: ui.activeAccount == InstagramAccount.jp
+                      ? Column(
+                          children: <Widget>[
+                            StoryLinkCard(
+                              title: 'JP Instagram ストーリー用リンク',
+                              link: storyLinks[InstagramAccount.jp] ?? '',
+                              isCopied: ui.copiedId == 'story-jp',
+                              onCopy: () => _copyAndNotify(
+                                context: context,
+                                ref: ref,
+                                copiedId: 'story-jp',
+                                sourceText:
+                                    storyLinks[InstagramAccount.jp] ?? '',
+                                deadline: deadline,
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            StoryLinkCard(
+                              title: 'JP Twitter（X）用リンク',
+                              link: jpTwitterLink,
+                              isCopied: ui.copiedId == 'jp-twitter-link',
+                              onCopy: () => _copyAndNotify(
+                                context: context,
+                                ref: ref,
+                                copiedId: 'jp-twitter-link',
+                                sourceText: jpTwitterLink,
+                                deadline: deadline,
+                              ),
+                            ),
+                          ],
+                        )
+                      : StoryLinkCard(
+                          title: '${ui.activeAccount.label} ストーリー用リンク',
+                          link: storyLinks[ui.activeAccount] ?? '',
+                          isCopied:
+                              ui.copiedId == 'story-${ui.activeAccount.name}',
+                          onCopy: () => _copyAndNotify(
+                            context: context,
+                            ref: ref,
+                            copiedId: 'story-${ui.activeAccount.name}',
+                            sourceText: storyLinks[ui.activeAccount] ?? '',
+                            deadline: deadline,
+                          ),
+                        ),
                 ),
               ),
             if (ui.activeTab == InstagramTab.dm)

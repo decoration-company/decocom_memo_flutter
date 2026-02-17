@@ -9,6 +9,9 @@ const Map<InstagramAccount, String> storyLinks = <InstagramAccount, String>{
       'https://decocom.onelink.me/IkPp/Instagram?utm_medium=story&utm_campaign=decocom_jp',
 };
 
+const String jpTwitterLink =
+    'https://decocom.onelink.me/IkPp/x?utm_medium=post&utm_campaign=decocom_jp';
+
 const Map<InstagramAccount, List<DmTemplate>> accountTemplates =
     <InstagramAccount, List<DmTemplate>>{
       InstagramAccount.official: <DmTemplate>[
