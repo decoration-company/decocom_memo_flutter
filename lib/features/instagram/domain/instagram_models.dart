@@ -16,6 +16,19 @@ extension InstagramAccountX on InstagramAccount {
 
 enum InstagramTab { story, dm }
 
+/// 常に確認したいオフィシャルハッシュタグ（アカウントごと）
+class OfficialHashtag {
+  const OfficialHashtag({
+    required this.tag,
+    required this.exploreUrl,
+  });
+
+  /// 表示用（例: #snowmanのある生活）
+  final String tag;
+  /// Instagram キーワード検索URL（例: https://www.instagram.com/explore/search/keyword/?q=%23...）
+  final String exploreUrl;
+}
+
 class DmTemplate {
   const DmTemplate({
     required this.id,

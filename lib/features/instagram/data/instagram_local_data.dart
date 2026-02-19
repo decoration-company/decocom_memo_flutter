@@ -12,6 +12,31 @@ const Map<InstagramAccount, String> storyLinks = <InstagramAccount, String>{
 const String jpTwitterLink =
     'https://decocom.onelink.me/IkPp/x?utm_medium=post&utm_campaign=decocom_jp';
 
+/// 各アカウントで常に確認したいオフィシャルハッシュタグ（Instagram キーワード検索リンク）
+const Map<InstagramAccount, List<OfficialHashtag>> officialHashtags =
+    <InstagramAccount, List<OfficialHashtag>>{
+  InstagramAccount.official: <OfficialHashtag>[
+    const OfficialHashtag(
+      tag: '#ウィンドブレーカー',
+      exploreUrl:
+          'https://www.instagram.com/explore/search/keyword/?q=%23%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%83%96%E3%83%AC%E3%83%BC%E3%82%AB%E3%83%BC',
+    ),
+  ],
+  InstagramAccount.days: <OfficialHashtag>[],
+  InstagramAccount.jp: <OfficialHashtag>[
+    const OfficialHashtag(
+      tag: '#snowmanのある生活',
+      exploreUrl:
+          'https://www.instagram.com/explore/search/keyword/?q=%23snowman%E3%81%AE%E3%81%82%E3%82%8B%E7%94%9F%E6%B4%BB',
+    ),
+    const OfficialHashtag(
+      tag: '#お洒落なジャニヲタさんと繋がりたい',
+      exploreUrl:
+          'https://www.instagram.com/explore/search/keyword/?q=%23%E3%81%8A%E6%B4%92%E8%88%92%E3%81%AA%E3%82%B8%E3%83%A3%E3%83%8B%E3%82%B2%E3%82%BF%E3%81%95%E3%82%93%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84',
+    ),
+  ],
+};
+
 const Map<InstagramAccount, List<DmTemplate>> accountTemplates =
     <InstagramAccount, List<DmTemplate>>{
       InstagramAccount.official: <DmTemplate>[

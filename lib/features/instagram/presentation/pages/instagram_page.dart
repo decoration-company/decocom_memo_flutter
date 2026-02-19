@@ -3,6 +3,7 @@ import 'package:decocom_memo_flutter/features/instagram/data/instagram_local_dat
 import 'package:decocom_memo_flutter/features/instagram/domain/instagram_models.dart';
 import 'package:decocom_memo_flutter/features/instagram/presentation/widgets/account_tabs.dart';
 import 'package:decocom_memo_flutter/features/instagram/presentation/widgets/dm_template_tile.dart';
+import 'package:decocom_memo_flutter/features/instagram/presentation/widgets/official_hashtag_section.dart';
 import 'package:decocom_memo_flutter/features/instagram/presentation/widgets/story_link_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,6 +17,7 @@ class InstagramPage extends ConsumerWidget {
     final ui = ref.watch(instagramUiProvider);
     final groupedTemplates = ref.watch(groupedTemplatesProvider);
     final deadline = ref.watch(deadlineTextProvider);
+    final hashtags = ref.watch(currentOfficialHashtagsProvider);
 
     return Scaffold(
       body: SafeArea(
@@ -28,6 +30,9 @@ class InstagramPage extends ConsumerWidget {
                     .read(instagramUiProvider.notifier)
                     .selectAccount(account),
               ),
+            ),
+            SliverToBoxAdapter(
+              child: OfficialHashtagSection(hashtags: hashtags),
             ),
             SliverToBoxAdapter(
               child: Padding(

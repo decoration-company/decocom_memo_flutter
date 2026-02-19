@@ -98,3 +98,8 @@ final groupedTemplatesProvider = Provider<Map<String, List<DmTemplate>>>((ref) {
   }
   return map;
 });
+
+final currentOfficialHashtagsProvider = Provider<List<OfficialHashtag>>((ref) {
+  final state = ref.watch(instagramUiProvider);
+  return officialHashtags[state.activeAccount] ?? <OfficialHashtag>[];
+});
